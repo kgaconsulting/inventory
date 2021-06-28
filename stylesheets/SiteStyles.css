@@ -1,0 +1,119 @@
+* {
+   
+}
+
+html, body {
+    font-family: Arial;
+    padding: 0;
+    margin:0;
+    height:100%;
+    background-color: #f6f6f6
+}
+
+.maintable {
+    width: 100%;
+    height:875px;
+    border-collapse: collapse;
+}
+
+    .maintable.td1 {
+        background-color: #3d3d3d;
+        color: white;
+        width: 200px;
+        text-align: center;
+        vertical-align:top;
+        height:100%;
+    }
+
+    .maintable.td2{
+        height:100%;
+        vertical-align:top;
+        width:auto;
+    }
+
+.menutable{
+    width: 100%;
+    padding-top:40px;
+}
+
+.menutable1{
+    width:100%;
+    padding-top:5px;
+}
+.menutable1.td1{
+    padding-top:0px;
+}
+.menutable.td5{
+    padding-top:20px;
+}
+
+.footertable{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+    .footertable .td3 {
+        background-color: #3d3d3d;
+        color: white;
+        width: 200px;
+        text-align: center;
+        vertical-align: top;
+    }
+    
+    .footertable.td4 {
+        background-color:lightgray;
+        width:auto;
+        text-align: center;
+    }
+
+
+.clockheader {
+    width:100%; 
+    height:50px; 
+    background-color:white; 
+    color:black;
+}
+.clock {
+    text-align:center;
+    vertical-align:bottom; 
+    font-weight:400; 
+    font-size:40px;
+    padding: 0px;
+    border-collapse: collapse;
+}
+    .clock.seconds {
+        text-align: center;
+        vertical-align:bottom;
+        font-weight: normal;
+        font-size: initial; 
+        padding: 0px;
+    }
+
+.pushable {
+    width:150px;
+    height:25px;
+    background-color:white;
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+  }
+  .front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 47%);
+    color: white;
+    transform: translateY(-6px);
+  }
+
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+
+.frames{
+    height: 450px;
+}
