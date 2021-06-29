@@ -1,0 +1,17 @@
+.tablegrid{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tablegrid, .tdgrid, .thgrid, .tdgrid1 {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.thgrid {
+    text-align: center;
+}
+
+.tdgrid1{
+    text-align: center;
+}

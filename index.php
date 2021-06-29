@@ -84,9 +84,9 @@
                                 //$_SESSION['userId'] = $userinfo[0][emp_id];
                                 //$_SESSION['firstname'] = $userinfo[0][fname];
                                 //$_SESSION['lastname'] = $userinfo[0][lname];
-                                //$_SESSION['loggedin'] = 1;
-                                 //header("Location:/home.php");
-                                echo 'It worked';
+                                $_SESSION['loggedin'] = 1;
+                                header("Location:/home.php");
+                                //echo 'It worked';
                             }elseif ($isValid == -1) {
                                 echo '<span style="color:red">Invalid username<br />Please re-enter</span>';
                             }elseif ($isValid == -2) {

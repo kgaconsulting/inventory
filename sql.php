@@ -9,9 +9,8 @@
         
         if (!$conn) {
             $conn = new mysqli (Server, User, Pass, Dbase);
-            if ($conn->connection_error){
-                //trigger_error('Could not connect to MYSql.');
-                 die("Connection failed: " . $conn->connect_error) . "<p />\n";
+            if ($conn->connect_errno){
+                echo "Failed to connect o MySQL Database " . $mysqli->connect_error; 
             }
         }    
         return $conn;
@@ -26,13 +25,13 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $b = $row[valid1];
+                $b = $row['valid1'];
                 if ($b == 1){
                     $sql1 = "select count(*) as valid2 from users where uname = '$uname' and pass = '$pass'";
                     $result1 = $conn->query($sql1);
                     if ($result1->num_rows > 0){
                         while($row = $result1->fetch_assoc()){
-                            $c = $row[valid2];
+                            $c = $row['valid2'];
                             if ($c == 1){
                                 $a = 1;
                             }else{
@@ -49,5 +48,28 @@
         }
         return $a;
     }
+    
+    function get_items($offset){
+        $a = array();
+        $conn = dbconnect();
+        if ($result = $conn -> query("SELECT DATABASE()")) {
+            $row = $result -> fetch_row();
+            //echo "Default database is " . $row[0] . "<p />\n";
+            $result -> close();
+         }else{
+             echo "NO valid connection exists";
+         }
 
+        $sql = "select * from searchview limit $offset,25";
+        //echo $sql."<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
 ?>
