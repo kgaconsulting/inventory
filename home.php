@@ -43,32 +43,32 @@
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" onClick="startUpdate('itemslist.php?q=0')"><span class="font">Menu Item 1</span></button>    
+                                    <button class="pushable" onClick="startUpdate('itemslist.php?q=0')"><span class="font">Inventory List</span></button>    
                               </td>
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" onClick="startUpdate('customers.php')"><span class="font">Menu Item 2</span></button>
+                                    <button class="pushable" onClick="startUpdate('customers.php')"><span class="font">Add Inventory Item</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable"><span class="font">Menu Item 3</span></button>
+                                    <button class="pushable"><span class="font">Edit Inventory Item</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable"><span class="font">Menu Item 4</span></button>
+                                    <button class="pushable"><span class="font">Change Bin Location</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable"><span class="font">Menu Item 5</span></button>
+                                    <button class="pushable"><span class="font">Maintainance</span></button>
                                 </td>
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" onClick="startUpdate('employees.php')"><span class="font">Menu Item 6</span></button> 
+                                    <button class="pushable" ><span class="font">Log Out</span></button> 
                                 </td>
                             </tr>
                             <tr>

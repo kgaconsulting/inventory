@@ -79,4 +79,30 @@
         }  
         return $a;
     }
+
+    function get_binlocation($q){
+        $b = substr($q, -4);
+        $a = array();
+        $conn = dbconnect();
+        if ($result = $conn -> query("SELECT DATABASE()")) {
+            $row = $result -> fetch_row();
+            //echo "Default database is " . $row[0] . "<p />\n";
+            $result -> close();
+         }else{
+             echo "NO valid connection exists";
+         }
+
+        $sql = "select * from searchview where bin_number=$b";
+        //echo $sql."<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
 ?>
