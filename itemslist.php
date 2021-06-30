@@ -1,7 +1,12 @@
  <?php
     require("sql.php");
     echo '<div id="swoupdate">';
-        $lPage = 0;
+        $q = intval($_GET['q']);
+        if ($q != NULL){
+            $lPage = $q;
+        }else{
+            $lPage = 0;
+        }
         display_records($lPage);
         function display_records($lPage){
             $a = get_items($lPage);
@@ -42,12 +47,25 @@
                 }
 
         }
-            echo "</table>";
-            echo "<table>";
-            echo "<tr>";
-            echo '<td><button class="pushable"><span class="font">previous</span></button></td>';
-            echo '<td><button class="pushable"><span class="font">next</span></button></td>';
-            echo "</tr>";
-            echo "</table>";
+        $pPage = 0;
+        $nPage = 0;
+        if ($lPage > 20){
+            $pPage = $pPage-20;
+        }
+        $nPage = $nPage + 20;
+        echo "</table>";
+        echo '<table style="padding-top:10px">';
+            echo '<tr>';
+                echo '<td>&nbsp;</td>';
+                echo '<td>';
+                    echo '<table style="background-color:grey;">';
+                        echo '<tr>';
+                            echo '<td><button class="pushable"><span class="font" onClick="showNextPage(\'' . $pPage . '\')">previous</span></button></td>';
+                            echo '<td><button class="pushable"><span class="font" onClick="showNextPage(\'' . $nPage . '\')">next</span></button></td>';
+                        echo '</tr>';
+                    echo '</table>';
+                echo '</td>';
+            echo '</tr>';
+        echo '</table>';
 ?>
     </div>

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
 ?>
 <?php
 
@@ -14,10 +15,6 @@
 <html>
     <head>
         <title>Storage Manager</title>
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-        <link rel="manifest" href="/icons/site.webmanifest">
         <link href="stylesheets/main.css" rel="stylesheet" tyle="text/css">
         <link href="stylesheets/SiteStyles.css" rel="stylesheet" type="text/css">
         <link href="stylesheets/datagrids.css" rel="stylesheet" type="text/css">
@@ -26,7 +23,7 @@
         <?php 
           $isLoggedin = $_SESSION['loggedin'];
             if ($isLoggedin != 1){
-                //header("location:/index.php");
+                header("location:/index.php");
             } 
         ?>
         <script type="text/javascript"> 
@@ -46,7 +43,7 @@
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" onClick="startUpdate('itemslist.php')"><span class="font">Menu Item 1</span></button>    
+                                    <button class="pushable" onClick="startUpdate('itemslist.php?q=0')"><span class="font">Menu Item 1</span></button>    
                               </td>
                             </tr>
                             <tr>
@@ -94,7 +91,7 @@
                                 <label id="ct2" class="clock seconds"></label>
                             </div>
                         </div> 
-                        <div id="txtHint" class="frames"><script>startUpdate('itemslist.php');</script></div>
+                        <div id="txtHint" class="frames"><script>startUpdate('itemslist.php?q=0');</script></div>
                     </td>
                 </tr>
             </table>

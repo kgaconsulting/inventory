@@ -21,6 +21,13 @@
         $b = 0;
         $c = 0;
         $conn = dbconnect();     
+        if ($result = $conn -> query("SELECT DATABASE()")) {
+            $row = $result -> fetch_row();
+            //echo "Default database is " . $row[0] . "<p />\n";
+            $result -> close();
+         }else{
+             echo "NO valid connection exists";
+         }
         $sql = "select count(*) as valid1 from users where uname = '$uname'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {

@@ -1,5 +1,6 @@
 <?php
     session_start();
+    ob_start();
 ?>
 <?php
 
@@ -85,7 +86,7 @@
                                 //$_SESSION['firstname'] = $userinfo[0][fname];
                                 //$_SESSION['lastname'] = $userinfo[0][lname];
                                 $_SESSION['loggedin'] = 1;
-                                header("Location:/home.php");
+                                header("Location:home.php");
                                 //echo 'It worked';
                             }elseif ($isValid == -1) {
                                 echo '<span style="color:red">Invalid username<br />Please re-enter</span>';

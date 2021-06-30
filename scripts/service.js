@@ -58,7 +58,7 @@ function showmenu(str){
         }
     }
     xmlhttp.open("GET",temp2);
-    xmlhttp.send();
+    //xmlhttp.send();
 
 }
 
@@ -75,6 +75,23 @@ function showWoDetail(str){
             }
         }
         xmlhttp.open("GET","editwo.php?q="+str,true);
+        xmlhttp.send();
+    }
+}
+
+function showNextPage(str){
+    if(str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+    }else{
+        clearInterval(interval);
+        //str++;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        }
+        xmlhttp.open("GET","itemslist.php?q="+str,true);
         xmlhttp.send();
     }
 }
