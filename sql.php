@@ -105,4 +105,20 @@
         return $a;
     }
 
+    function get_binlist(){
+        $a = array();
+        $conn = dbconnect();
+        $sql = "select * from bins";
+        //echo $sql . "<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
 ?>

@@ -1,6 +1,6 @@
 <?php
     require("sql.php");
-    $q = intval($_GET['q']);
+    $q = intval($_GET['bin']);
 
 ?>
 <!doctype html>

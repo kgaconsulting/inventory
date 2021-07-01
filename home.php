@@ -58,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable"><span class="font">Change Bin Location</span></button>
+                                    <button class="pushable" onClick="startUpdate('binupdate.php')"><span class="font">Change Bin Location</span></button>
                                 </td>
                             </tr>
                             <tr>
