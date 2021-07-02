@@ -4,7 +4,7 @@
     $bins = get_binlist();
     $arraylengh=count($bins);
 ?>
-<form action="">
+<form method="post" action="<?php echo $SERVER['PHP_SELF'];?>">
     <table width="100%">
         <tr>
             <td colspan="3"><label for="bins">Select bin to change location:</label>
@@ -38,3 +38,10 @@
         </tbody>
     </table>
 </form>
+<?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $binID = $_POST['$q'];
+        $siteID = $_POST['selectednewsite'];
+        $unitID = $_POST['selectednewunit'];
+    }
+?>
