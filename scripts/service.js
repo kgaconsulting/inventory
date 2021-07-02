@@ -38,11 +38,11 @@ function showUser(str) {
 }
 
 function startUpdate(str){
-    if (interval != 0){
-        document.getElementById("txtHint").innerHTML = "";
-    }
-    clearInterval(interval);
-    interval = setInterval(showUser,10000,str);
+//    if (interval != 0){
+//        document.getElementById("txtHint").innerHTML = "";
+//    }
+//    clearInterval(interval);
+//    interval = setInterval(showUser,10000,str);
     showmenu(str);
     showUser(str);
     
@@ -210,21 +210,35 @@ function equipdetails(str){
             }
         xmlhttp.open("GET","selectequipdetail.php?q="+str,true);
         xmlhttp.send();
-        contdetails();
     }
 }
 
-function contdetails(){
+//function contdetails(){
+//        clearInterval(interval);
+//        var xmlhttp = new XMLHttpRequest();
+//        xmlhttp.onreadystatechange = function() {
+//            if (this.readyState == 4 && this.status == 200) {
+//                document.getElementById("contractdetails").innerHTML = this.responseText;
+//                }
+//            }
+//        xmlhttp.open("GET","selectcontractdetail.php");
+//        xmlhttp.send();
+//    
+//}
+
+function updatebins(str){
+    if(str == "") {
+        document.getElementById("binupdates").innerHTML = "";
+    }else{
         clearInterval(interval);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contractdetails").innerHTML = this.responseText;
-                }
+                document.getElementById("binupdates").innerHTML = this.responseText;
             }
-        xmlhttp.open("GET","selectcontractdetail.php");
+            }
+        xmlhttp.open("GET","selectbinupdates.php?q="+str,true);
         xmlhttp.send();
-    
+    }
 }
-
 

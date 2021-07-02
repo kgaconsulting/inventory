@@ -1,4 +1,5 @@
  <?php
+    session_start();
     require("sql.php");
     $bins = get_binlist();
     $arraylengh=count($bins);
@@ -26,14 +27,14 @@
             <td colspan="3"><hr></td>
         </tr>
         <tr>
-            <td>current Bin ID</td>
+            <td>Current Bin ID</td>
             <td>Current Bin Site</td>
             <td>Current Bin Location </td>
         </tr>
-        <tr>
-            <td>binID</td>
-            <td>siteID</td>
-            <td>LocationID</td>
-        </tr>
+        <tbody id="binupdates">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tbody>
     </table>
 </form>

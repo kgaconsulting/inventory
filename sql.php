@@ -121,4 +121,56 @@
         return $a;
     }
 
+    function get_sitelist(){
+        $a = array();
+        $conn = dbconnect();
+        $sql = "select * from site";
+        //echo $sql . "<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
+    function get_unitlist(){
+        $a = array();
+        $conn = dbconnect();
+        $sql = "select * from unit";
+        //echo $sql . "<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
+    function get_currentbindetails($b){
+        $a = array();
+        $conn = dbconnect();
+        $sql = "select distinct contents.bin_id, site.name, unit.unit_number 
+                from contents
+                inner join site on site.site_id = contents.site_id
+                inner join unit on unit.unit_id = contents.unit_id	
+                where contents.bin_id = $b";
+        //echo $sql . "<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
 ?>
