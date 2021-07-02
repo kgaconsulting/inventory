@@ -4,7 +4,7 @@
     $bins = get_binlist();
     $arraylengh=count($bins);
 ?>
-<form method="post" action="<?php echo $SERVER['PHP_SELF'];?>">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <table width="100%">
         <tr>
             <td colspan="3"><label for="bins">Select bin to change location:</label>
@@ -40,8 +40,14 @@
 </form>
 <?php
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $binID = $_POST['$q'];
-        $siteID = $_POST['selectednewsite'];
-        $unitID = $_POST['selectednewunit'];
+        $binID = $_POST['bins'];
+        $siteID = $_POST['newsite'];
+        $unitID = $_POST['newunit'];
+        $savedUpdate = savedUpdate($binID,$siteID,$unitID);
+        if ($savedUpdate == 1){
+            echo "<script>window.location.href='home.php';</script>";
+        }else{
+            echo "Massive Failure Occured!";
+        }
     }
 ?>

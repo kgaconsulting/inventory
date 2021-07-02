@@ -173,4 +173,10 @@
         return $a;
     }
 
+    function savedUpdate($binID,$siteID,$unitID){
+        $conn = dbconnect();
+        $sql = "update contents set site_id = $siteID, unit_id = $unitID where bin_id = $binID";
+        $result = $conn->query($sql);
+        return $result;
+    }
 ?>
