@@ -3,6 +3,7 @@
     copyright KGA Consulting Service 2021
 */
 
+//database connection strings here
     require ("config.php");
     function dbconnect(){
         static $conn;
@@ -15,6 +16,8 @@
         }    
         return $conn;
     }
+
+//user functions here
 
     function validate_login($uname,$pass){
         $a = 0;
@@ -55,7 +58,9 @@
         }
         return $a;
     }
-    
+
+//get info quiries here
+
     function get_items($offset){
         $a = array();
         $conn = dbconnect();
@@ -153,6 +158,22 @@
         return $a;
     }
 
+    function get_currentbincontents($b){
+        $a = array();
+        $conn = dbconnect();
+        $sql = "select content_id,item,model,serial from contents where bin_id = $b";
+        //echo $sql . "<br />";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $count = 0;
+            while($row = $result->fetch_assoc()){
+                $a[] = $row;
+                $count++;
+            }
+        }  
+        return $a;
+    }
+
     function get_currentbindetails($b){
         $a = array();
         $conn = dbconnect();
@@ -172,6 +193,8 @@
         }  
         return $a;
     }
+
+//output functions below here
 
     function savedUpdate($binID,$siteID,$unitID){
         $conn = dbconnect();

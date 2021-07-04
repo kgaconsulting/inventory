@@ -242,3 +242,18 @@ function updatebins(str){
     }
 }
 
+function getbincontent(str){
+    if(str == "") {
+        document.getElementById("bincontent").innerHTML = "";
+    }else{
+        //clearInterval(interval);
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("bincontent").innerHTML = this.responseText;
+            }
+            }
+        xmlhttp.open("GET","bincontent.php?q="+str,true);
+        xmlhttp.send();
+    }
+}

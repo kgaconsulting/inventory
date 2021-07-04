@@ -9,7 +9,17 @@
     All rights reserved.
     See licence.txt
 */
-
+//$q = 'itemslist.php?q=0';
+//$q = intval($_GET['q']);
+$q = $_GET['q'];
+if ($q == 0){
+    $url = "itemslist.php?q=0";   
+}else if ($q == 1){
+    $url = "addbin.php?q=" . $q;
+}
+//if ($q == null){
+//    $q = 'itemslist.php?q=0';
+//}
 ?>
 <!doctype html>
 <html>
@@ -48,7 +58,7 @@
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" onClick="startUpdate('customers.php')"><span class="font">Add Inventory Item</span></button>
+                                    <button class="pushable" onClick="startUpdate('addbin.php')"><span class="font">Add Inventory Item</span></button>
                                 </td>
                             </tr>
                             <tr>
@@ -91,7 +101,7 @@
                                 <label id="ct2" class="clock seconds"></label>
                             </div>
                         </div> 
-                        <div id="txtHint" class="frames"><script>startUpdate('itemslist.php?q=0');</script></div>
+                        <div id="txtHint" class="frames"><script>startUpdate('<?php echo $url; ?>');</script></div>
                     </td>
                 </tr>
             </table>
