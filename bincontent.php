@@ -2,6 +2,7 @@
     session_start();
     require('sql.php');
     $q = intval($_GET['q']);
+    $_SESSION['binid'] = $q;
     $bins = get_currentbincontents($q);
     if (count($bins) == 0){
         echo "Bin " . substr($q,-2) . " Currently has no content <br />";          
@@ -10,7 +11,8 @@
         echo '<th Class="thgrid">Item ID</th>
              <th class="thgrid">Item</th>
              <th class="thgrid">Model Number</th>
-             <th class="thgrid">Serial Number</th>';
+             <th class="thgrid">Serial Number</th>
+             </tr>';
              while($count < count($bins)){
                 echo '<tr>';
                  echo '<td class="tdgrid">' . $bins[$count]['content_id'] . '</td>';
@@ -28,14 +30,14 @@
         <?php
             echo '<tr>';
             echo '  <td align="right">Item:</td>';
-            echo '  <td align="left"><input type="text" name"item" id="item"></td>';
+            echo '  <td align="left"><input type="text" name="item" id="item" /></td>';
             echo '  <td align="right">Model No.:</td>';
-            echo '  <td align="left"><input type="text" name"model" id="model"></td>';
+            echo '  <td align="left"><input type="text" name="model" id="model" /></td>';
             echo '  <td align="right">Serial No.:</td>';
-            echo '  <td align="left"><input type="text" name"serial" id="serial"></td>';
+            echo '  <td align="left"><input type="text" name="serial" id="serial" /  ></td>';
             echo '</tr>';
             echo '<tr>';
-            echo '  <td align="right"><input type="submit" name="submit" id="submit"></td>';
+            echo '  <td align="right"><input type="submit" name="submit" id="submit" value="Add Content" /></td>';
             echo '  <td align="left"></td>';
             echo '  <td align="right"></td>';
             echo '  <td align="left"></td>';
@@ -45,4 +47,3 @@
             ?>    
         </table>
     </td>
-</tr>

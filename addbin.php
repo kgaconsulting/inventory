@@ -32,15 +32,16 @@
     </table>
     <?php
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-//        $binID = $_POST['bins'];
-//        $siteID = $_POST['newsite'];
-//        $unitID = $_POST['newunit'];
-//        $savedUpdate = savedUpdate($binID,$siteID,$unitID);
-//        if ($savedUpdate == 1){
-            echo "<script>window.location.href='home.php?q=1&r=".$activebin."';</script>";
-//        }else{
-//            echo "Massive Failure Occured!";
-//        }
+        $item = $_POST['item'];
+        $model = $_POST['model'];
+        $serial = $_POST['serial'];
+        $binID = $_SESSION['binid'];    
+        $savedUpdate = additem($item,$model,$serial,$binID);
+        if ($savedUpdate == 1){
+            echo "<script>window.location.href='home.php?q=1';</script>";
+        }else{
+            echo "Massive Failure Occured!";
+        }
     }
 
     ?>

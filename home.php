@@ -15,8 +15,11 @@ $q = $_GET['q'];
 if ($q == 0){
     $url = "itemslist.php?q=0";   
 }else if ($q == 1){
-    $url = "addbin.php?q=" . $q;
+    $url = "addbin.php";
+}else if ($q == 3){
+    $url = "binupdate.php";
 }
+
 //if ($q == null){
 //    $q = 'itemslist.php?q=0';
 //}

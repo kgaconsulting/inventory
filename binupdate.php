@@ -45,7 +45,7 @@
         $unitID = $_POST['newunit'];
         $savedUpdate = savedUpdate($binID,$siteID,$unitID);
         if ($savedUpdate == 1){
-            echo "<script>window.location.href='home.php';</script>";
+            echo "<script>window.location.href='home.php?q=3';</script>";
         }else{
             echo "Massive Failure Occured!";
         }

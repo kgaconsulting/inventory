@@ -202,4 +202,12 @@
         $result = $conn->query($sql);
         return $result;
     }
+
+    function additem($item,$model,$serial,$binID){
+        $conn = dbconnect();
+        $sql = "insert into contents (site_id,unit_id,bin_id,item,model,serial) values (18016,5001,$binID,'$item','$model','$serial')";
+        echo $sql . "<br />";
+        $result = $conn->query($sql);
+        return $result;
+    }
 ?>
