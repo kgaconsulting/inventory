@@ -38,14 +38,12 @@ function showUser(str) {
 }
 
 function startUpdate(str){
-//    if (interval != 0){
-//        document.getElementById("txtHint").innerHTML = "";
-//    }
-//    clearInterval(interval);
-//    interval = setInterval(showUser,10000,str);
-    showmenu(str);
-    showUser(str);
-    
+    if(str=="logout.php"){
+        window.location.href='logout.php';
+    }else{
+        showmenu(str);
+        showUser(str);
+    }
 }
 
 function showmenu(str){

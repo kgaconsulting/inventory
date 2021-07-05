@@ -81,7 +81,7 @@ if ($q == 0){
                             </tr>
                             <tr>
                                 <td class =" menutable td5">
-                                    <button class="pushable" ><span class="font">Log Out</span></button> 
+                                    <button class="pushable" onClick="startUpdate('logout.php')"><span class="font">Log Out</span></button> 
                                 </td>
                             </tr>
                             <tr>
