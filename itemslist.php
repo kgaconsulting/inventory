@@ -7,6 +7,7 @@
         }else{
             $lPage = 0;
         }
+        echo $lPage;
         display_records($lPage);
         function display_records($lPage){
             $a = get_items($lPage);
@@ -52,9 +53,9 @@
         $pPage = 0;
         $nPage = 0;
         if ($lPage > 20){
-            $pPage = $pPage-20;
+            $pPage = $lPage-20;
         }
-        $nPage = $nPage + 20;
+        $nPage = $lPage + 20;
         echo "</table>";
         echo '<table style="padding-top:10px">';
             echo '<tr>';
