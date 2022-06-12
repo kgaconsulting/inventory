@@ -7,7 +7,7 @@
         }else{
             $lPage = 0;
         }
-        echo $lPage;
+        //echo $lPage;
         display_records($lPage);
         function display_records($lPage){
             $a = get_items($lPage);

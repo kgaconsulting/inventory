@@ -5,6 +5,6 @@
     define ('Server',"localhost");
     define ('User',"webs");
     define ('Pass',"1Kodas23!");
-    define ('Dbase',"inventory");  
+    define ('Dbase',"kgacoing_inventory");  
     define ('tzone','America/Edmonton');
 ?>

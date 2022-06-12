@@ -64,6 +64,7 @@
     function get_items($offset){
         $a = array();
         $conn = dbconnect();
+		//echo "We are back from conn\n";
         if ($result = $conn -> query("SELECT DATABASE()")) {
             $row = $result -> fetch_row();
             //echo "Default database is " . $row[0] . "<p />\n";
@@ -72,7 +73,7 @@
              echo "NO valid connection exists";
          }
 
-        $sql = "select * from searchview limit $offset,25";
+        $sql = "select * from searchview order by content_id limit $offset,25";
         //echo $sql."<br />";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
